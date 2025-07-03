@@ -4,6 +4,16 @@ import { useState } from 'react'
 
 function App() {
   const [count, setCount] = useState(0)
+  const todos=[{
+    title:"go to gym ",
+    done:true
+  },{
+    title:"go to school ",
+    done:false
+  }]
+
+     
+
 
   return (
     <div>
