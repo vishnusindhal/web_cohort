@@ -1,48 +1,23 @@
-import { useState } from 'react'
+import React from 'react';
 
+const ItemList = ({ items }) => {
+    return (
+        <ul>
+            {items.map(item => (
+                <li key={item.id}>{item.name}</li>
+            ))}
+        </ul>
+    );
+};
 
+const App = () => {
+    const items = [
+        { id: 1, name: 'Item 1' },
+        { id: 2, name: 'Item 2' },
+        { id: 3, name: 'Item 3' },
+    ];
 
-function App() {
-  const [count, setCount] = useState(0)
-  const todos=[{
-    title:"go to gym ",
-    done:true
-  },{
-    title:"go to school ",
-    done:false
-  }]
+    return <ItemList items={items} />;
+};
 
-     
-
-
-  return (
-    <div>
-      
-      <Card> 
-        <div style={{color:"green"}}>what you want to post 
-        <input type="text" / >
-      </div>
-      </Card>
-       <Card> 
-        content={<div style={{color:"green"}}>what you want to post 
-        <input type="text" / >
-      </div>}  
-   
-       </Card>
-        </div>
-    
-  )
-
-}
-
-function Card({children}){
-
-  return (
-
-    <div style={{background:"black", borderRadius:10,padding:10,margin:10}}>
-      {children}
-    </div>
-  )
-}
-
-export default App 
+export default App ;
